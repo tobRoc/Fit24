@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Fit24"
+             x:Class="Fit24.MainPage">
+    <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Herzlich Willkommen bei Fit24"/>
+            <Label Text="Text" x:Name="mainText"/>
+            <Image x:Name="mainImage" Source="karte_amberg.png" VerticalOptions="CenterAndExpand"/>
+            <Picker x:Name="mainPicker" HorizontalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Amberg</x:String>
+                    <x:String>Amberg Light</x:String>
+                    <x:String>Nabburg</x:String>
+                    <x:String>Schwandorf</x:String>
+                    <x:String>Sulzbach-Rosenberg</x:String>
+                    <x:String>Weiden i.D. OPF</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+    </ContentView>
+</ContentPage>

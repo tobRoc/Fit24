@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Fit24"
+             x:Class="Fit24.CursePlan">
+    <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Kursplan"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.08*" x:Name="rowTitel" />
+                    <RowDefinition Height="0.08*" x:Name="row01"/>
+                    <RowDefinition Height="0.08*" x:Name="row02" />
+                    <RowDefinition Height="0.08*" x:Name="row03" />
+                    <RowDefinition Height="0.08*" x:Name="row04" />
+                    <RowDefinition Height="0.08*" x:Name="row05" />
+                    <RowDefinition Height="0.08*" x:Name="row06" />
+                    <RowDefinition Height="0.08*" x:Name="row07" />
+                    <RowDefinition Height="0.08*" x:Name="row08" />
+                    <RowDefinition Height="0.08*" x:Name="row09" />
+                    <RowDefinition Height="0.08*" x:Name="row10" />
+                    <RowDefinition Height="0.08*" x:Name="row11" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.125*" x:Name="colDays"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col1"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col2"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col3"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col4"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col5"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col6"/>
+                    <ColumnDefinition Width="0.125*" x:Name="col7"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.ColumnSpan="8" Color="Gray" />
+                <BoxView Grid.RowSpan="12" Color="Gray" />
+                <Label Grid.Row="1" Grid.Column="2" Text="Mo" />
+                <Label Grid.Row="1" Grid.Column="3" Text="Di" />
+                <Label Grid.Row="1" Grid.Column="4" Text="Mi" />
+                <Label Grid.Row="1" Grid.Column="5" Text="Do" />
+                <Label Grid.Row="1" Grid.Column="6" Text="Fr" />
+                <Label Grid.Row="1" Grid.Column="7" Text="Sa" />
+                <Label Grid.Row="1" Grid.Column="8" Text="So" />
+                <Label Grid.Row="2" Grid.Column="1" Text="08:00" />
+                <Label Grid.Row="3" Grid.Column="1" Text="09:00" />
+                <Label Grid.Row="4" Grid.Column="1" Text="10:00" />
+                <Label Grid.Row="5" Grid.Column="1" Text="17:00" />
+                <Label Grid.Row="6" Grid.Column="1" Text="17:30" />
+                <Label Grid.Row="7" Grid.Column="1" Text="18:00" />
+                <Label Grid.Row="9" Grid.Column="1" Text="18:30" />
+                <Label Grid.Row="10" Grid.Column="1" Text="19:00" />
+                <Label Grid.Row="11" Grid.Column="1" Text="19:30" />
+                <Label Grid.Row="12" Grid.Column="1" Text="20:00" />
+            </Grid>
+        </StackLayout>
+    </ContentView>
+</ContentPage>
