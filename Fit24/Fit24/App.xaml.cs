@@ -9,12 +9,15 @@ namespace Fit24
 {
 	public partial class App : Application
 	{
-		public App ()
+        public static Dictionary<string, List<string>> ApplicationInfos = new Dictionary<string, List<string>>();
+
+        public App ()
 		{
 			InitializeComponent();
 
-			MainPage = new Fit24.MainPage();
-		}
+			//MainPage = new Fit24.MainPage();
+            MainPage = new NavigationPage(new Fit24.MainPage());
+        }
 
 		protected override void OnStart ()
 		{

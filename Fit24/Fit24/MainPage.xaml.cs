@@ -16,6 +16,8 @@ namespace Fit24
             Label lblMainText = this.FindByName<Label>("mainText");
             Picker picker = this.FindByName<Picker>("mainPicker");
             Image imgMain = this.FindByName<Image>("mainImage");
+            imgMain.Aspect = Aspect.AspectFit;
+            imgMain.Source = ImageSource.FromResource("karte_amberg.png");
 
             string text = @"Fitness und Gesundheitstraining ist nicht nur eine Tätigkeit, sondern eine Lebenseinstellung.";
             //text += @"Fit 24 und seine Mitarbeiter sind der festen Überzeugung, dass Bewegung zu den Grundbedürfnissen des Menschen gehören und dass richtiges, auf die Person zugeschnittes Training nicht nur die Kondition verbessert, sondern viel mehr bewirkt.";
@@ -38,17 +40,19 @@ namespace Fit24
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Image imgMain = this.FindByName<Image>("mainImage");
             Picker picker = this.FindByName<Picker>("mainPicker");
-
-            if (1 == picker.SelectedIndex)      { imgMain.Source = ImageSource.FromResource("karte_amberg.png"); }
-            else if (2 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_nabburg.png"); }
-            else if (3 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_schwandorf.png"); }
-            else if (4 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_sulzbachrosenberg.png"); }
-            else if (5 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_weiden.png"); }
-            
-            NavigationPage nav = new NavigationPage(this);
-            nav.PushAsync(new CursePlan());
+            if (1 > picker.SelectedIndex)
+            {
+                return;
+            }
+            /*
+                        if (1 == picker.SelectedIndex)      { imgMain.Source = ImageSource.FromResource("karte_amberg.png"); }
+                        else if (2 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_nabburg.png"); }
+                        else if (3 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_schwandorf.png"); }
+                        else if (4 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_sulzbachrosenberg.png"); }
+                        else if (5 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_weiden.png"); }
+              */
+            Navigation.PushAsync(new CursePlan(picker.Items[picker.SelectedIndex]));
         }
     }
 }
