@@ -2,14 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Fit24"
-             x:Class="Fit24.CursePlan">
+             x:Class="Fit24.CurseLogin">
     <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="Kursplan"/>
-            <Grid x:Name="gridCursePlan"/>
-            <Button Text="Kurs buchen" x:Name="btnCursePlanBook"/>
-            <Label Text="Weitere Kurse"/>
-            <Grid x:Name="gridCursePlanFurtherCurse"/>
+            
         </StackLayout>
     </ContentView>
 </ContentPage>

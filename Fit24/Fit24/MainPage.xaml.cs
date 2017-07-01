@@ -36,6 +36,14 @@ namespace Fit24
             lblMainText.Text = text;
             picker.SelectedIndex = 0;
             picker.SelectedIndexChanged += Picker_SelectedIndexChanged;
+
+            imgMain.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                TappedCallback = (v, o) => {
+                    Console.WriteLine("Image clicked");
+                },
+                NumberOfTapsRequired = 1
+            });
         }
 
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +60,7 @@ namespace Fit24
                         else if (4 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_sulzbachrosenberg.png"); }
                         else if (5 == picker.SelectedIndex) { imgMain.Source = ImageSource.FromResource("karte_weiden.png"); }
               */
-            Navigation.PushAsync(new CursePlan(picker.Items[picker.SelectedIndex]));
+            Navigation.PushAsync(new CursePlanOverview(picker.Items[picker.SelectedIndex]));
         }
     }
 }

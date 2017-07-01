@@ -16,70 +16,53 @@ namespace Fit24
 		public CursePlan(string location)
         {
             InitializeComponent();
-            Grid gridCursePlan = this.FindByName<Grid>("gridCursePlan");
             this.location = location;
 
-            var assembly = typeof(MainPage).GetTypeInfo().Assembly;
+            Grid gridCursePlan = this.FindByName<Grid>("gridCursePlan");
+            #region fill grid curse plan
+            Label cellEntrie = new Label();
+            cellEntrie.Text = "Bild Bild\nBild Bild\nBild Bild\nBild Bild";
+            gridCursePlan.Children.Add(cellEntrie, 0, 0);
 
-            //todo: remove this if the external file reading work
+            Label cellEntrie2 = new Label();
+            cellEntrie2.Text = "Name: " + "Jane Doe" + "\n";
+            cellEntrie2.Text = "Ausbildung & Erfahrung" + "\n";
+            cellEntrie2.Text = "*   " + "Reha Ausbildung" + "\n";
+            cellEntrie2.Text = "*   " + "..." + "\n";
+            cellEntrie2.Text = "*   " + "..." + "\n";
+            cellEntrie2.Text = "*   " + "..." + "\n";
+            cellEntrie2.Text = "*   " + "..." + "\n";
+            cellEntrie2.Text = "*   " + "..." + "\n";
+            gridCursePlan.Children.Add(cellEntrie2, 0, 1);
+            #endregion
+            Grid gridCursePlanFurtherCurse = this.FindByName<Grid>("gridCursePlanFurtherCurse");
+            #region fill grid curse plan further curse
+            Label cellEntrieFurtherCurse0_0 = new Label();
+            cellEntrieFurtherCurse0_0.Text = "Rücken";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse0_0, 0, 0);
+            Label cellEntrieFurtherCurse0_1 = new Label();
+            cellEntrieFurtherCurse0_1.Text = "23.06.2017;  8:00";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse0_1, 0, 1);
+            Label cellEntrieFurtherCurse1_0 = new Label();
+            cellEntrieFurtherCurse1_0.Text = "Bach Beine Po";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse1_0, 1, 0);
+            Label cellEntrieFurtherCurse1_1 = new Label();
+            cellEntrieFurtherCurse1_1.Text = "23.06.2017; 10:00";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse1_1, 1, 1);
+            Label cellEntrieFurtherCurse2_0 = new Label();
+            cellEntrieFurtherCurse2_0.Text = "...";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse2_0, 2, 0);
+            Label cellEntrieFurtherCurse2_1 = new Label();
+            cellEntrieFurtherCurse2_1.Text = "...";
+            gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse2_1, 2, 1);
+            #endregion
 
-            if (!App.ApplicationInfos.ContainsKey("kursplan_amberg light.csv")) { App.ApplicationInfos.Add("kursplan_amberg light.csv", AddCursePlan(assembly, "kursplan_amberg light.csv")); }
-            if (!App.ApplicationInfos.ContainsKey("kursplan_amberg.csv")) { App.ApplicationInfos.Add("kursplan_amberg.csv", AddCursePlan(assembly, "kursplan_amberg.csv")); }
-            if (!App.ApplicationInfos.ContainsKey("kursplan_nabburg.csv")) { App.ApplicationInfos.Add("kursplan_nabburg.csv", AddCursePlan(assembly, "kursplan_nabburg.csv")); }
-            if (!App.ApplicationInfos.ContainsKey("kursplan_schwandorf.csv")) { App.ApplicationInfos.Add("kursplan_schwandorf.csv", AddCursePlan(assembly, "kursplan_schwandorf.csv")); }
-            if (!App.ApplicationInfos.ContainsKey("kursplan_sulzbach-rosenberg.csv")) { App.ApplicationInfos.Add("kursplan_sulzbach-rosenberg.csv", AddCursePlan(assembly, "kursplan_sulzbach-rosenberg.csv")); }
-            if (!App.ApplicationInfos.ContainsKey("kursplan_weiden i.d. opf.csv")) { App.ApplicationInfos.Add("kursplan_weiden i.d. opf.csv", AddCursePlan(assembly, "kursplan_weiden i.d. opf.csv")); }
-            //end remove
-
-            List<string> cursePlan = App.ApplicationInfos["kursplan_" + location.ToLower() + ".csv"];
-
-            for (int i = 0; i < cursePlan.Count; i++)
-            {
-                string[] cellEntries = cursePlan[i].Split(';');
-                for (int j = 0; j < cellEntries.Length; j++)
-                {
-                    Label cellEntrie = new Label();
-                    cellEntrie.Text = cellEntries[j];
-                    if ((0 == j)||(0 == i)) { cellEntrie.TextColor = Color.Yellow; }
-                    gridCursePlan.Children.Add(cellEntrie, j, i);
-                }
-            }
-
-            //< Label Grid.Row = "0" Grid.Column = "1" Text = "Mo" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "2" Text = "Di" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "3" Text = "Mi" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "4" Text = "Do" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "5" Text = "Fr" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "6" Text = "Sa" TextColor = "Yellow" />
-            //< Label Grid.Row = "0" Grid.Column = "7" Text = "So" TextColor = "Yellow" />
-            //< Label Grid.Row = "1" Grid.Column = "0" Text = "08:00" TextColor = "Yellow" />       
-            //< Label Grid.Row = "2" Grid.Column = "0" Text = "09:00" TextColor = "Yellow" />              
-            //< Label Grid.Row = "3" Grid.Column = "0" Text = "10:00" TextColor = "Yellow" />                     
-            //< Label Grid.Row = "4" Grid.Column = "0" Text = "17:00" TextColor = "Yellow" />                            
-            //< Label Grid.Row = "5" Grid.Column = "0" Text = "17:30" TextColor = "Yellow" />                                   
-            //< Label Grid.Row = "6" Grid.Column = "0" Text = "18:00" TextColor = "Yellow" />                                          
-            //< Label Grid.Row = "7" Grid.Column = "0" Text = "18:30" TextColor = "Yellow" />                                                 
-            //< Label Grid.Row = "8" Grid.Column = "0" Text = "19:00" TextColor = "Yellow" />                                                        
-            //< Label Grid.Row = "9" Grid.Column = "0" Text = "19:30" TextColor = "Yellow" />                                                               
-            //< Label Grid.Row = "10" Grid.Column = "0" Text = "20:00" TextColor = "Yellow" />
-            //var topLeft = new Label { Text = "Top Left" };
-            //grid.Children.Add(topLeft, 0, 0);
+            Button button = this.FindByName<Button>("btnCursePlanBook");
+            button.Clicked += OnButtonClicked;
         }
-
-        private static List<string> AddCursePlan(Assembly assembly, string studioCurses)
+        void OnButtonClicked(object sender, EventArgs e)
         {
-            Stream stream = assembly.GetManifestResourceStream("Fit24.Droid.Data." + studioCurses);
-            List<string> lines = new List<string>();
-            using (TextReader tr = new System.IO.StreamReader(stream))
-            {
-                string line = tr.ReadLine();
-                while (null != line)
-                {
-                    lines.Add(line);
-                    line = tr.ReadLine();
-                }
-            }
-            return lines;
+            Navigation.PushAsync(new UserLogin("Kursname"));
         }
     }
 }

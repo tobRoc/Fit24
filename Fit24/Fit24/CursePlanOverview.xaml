@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Fit24"
+             x:Class="Fit24.CursePlanOverview">
+    <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Kursplan"/>
+            <Grid x:Name="gridCursePlanOverview">
+                <Grid.RowDefinitions>
+                    <!-- Height="0.08*" -->
+                    <RowDefinition x:Name="rowTitel" />
+                    <RowDefinition x:Name="row01"/>
+                    <RowDefinition x:Name="row02" />
+                    <RowDefinition x:Name="row03" />
+                    <RowDefinition x:Name="row04" />
+                    <RowDefinition x:Name="row05" />
+                    <RowDefinition x:Name="row06" />
+                    <RowDefinition x:Name="row07" />
+                    <RowDefinition x:Name="row08" />
+                    <RowDefinition x:Name="row09" />
+                    <RowDefinition x:Name="row10" />
+                    <RowDefinition x:Name="row11" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <!-- Width="0.125*" -->
+                    <ColumnDefinition x:Name="colDays"/>
+                    <ColumnDefinition x:Name="col1"/>
+                    <ColumnDefinition x:Name="col2"/>
+                    <ColumnDefinition x:Name="col3"/>
+                    <ColumnDefinition x:Name="col4"/>
+                    <ColumnDefinition x:Name="col5"/>
+                    <ColumnDefinition x:Name="col6"/>
+                    <ColumnDefinition x:Name="col7"/>
+                </Grid.ColumnDefinitions>
+                <BoxView Grid.ColumnSpan="8" Color="Gray" />
+                <BoxView Grid.RowSpan="12" Color="Gray" />
+            </Grid>
+        </StackLayout>
+    </ContentView>
+</ContentPage>

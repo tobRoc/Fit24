@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Fit24"
+             x:Class="Fit24.UserLogin">
+    <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
+            <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="f Login mit Facebook"/>
+            <Label Text="Wenn Sie einen Facebook-Account haben, können Sie sich schnell und einfach mit Ihrem Facbook-Account anmelden."/>
+            <Button Text="Anmelden" x:Name="btnFacebook"/>
+            <Label Text="Login mit Emailaddresse"/>
+            <Grid x:Name="gridUserLogin"/>
+            <Button Text="Anmelden" x:Name="btnUserlogin"/>
+        </StackLayout>
+    </ContentView>
+</ContentPage>
