@@ -36,6 +36,20 @@ namespace Fit24
             gridUserLogin.Children.Add(cellPassword, 1, 1);
 
             #endregion
+
+            Button buttonFacebook = this.FindByName<Button>("btnFacebook");
+            buttonFacebook.Clicked += OnButtonFacebookClicked;
+            
+            Button btnUserlogin = this.FindByName<Button>("btnUserlogin");
+            btnUserlogin.Clicked += OnButtonUserloginClicked;
+        }
+        void OnButtonFacebookClicked(object sender, EventArgs e)
+        {
+            //todo: Navigation.PushAsync(new FacebookLogin("Kursname"));
+        }
+        void OnButtonUserloginClicked(object sender, EventArgs e)
+        {
+            //todo: UserLogin;
         }
     }
 }

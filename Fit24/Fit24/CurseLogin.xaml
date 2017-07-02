@@ -4,8 +4,6 @@
              xmlns:local="clr-namespace:Fit24"
              x:Class="Fit24.CurseLogin">
     <ContentView x:Name="contentView" Padding="0,20,0,0" ControlTemplate="{StaticResource TealTemplate}">
-        <StackLayout VerticalOptions="CenterAndExpand">
-            
-        </StackLayout>
+        
     </ContentView>
 </ContentPage>

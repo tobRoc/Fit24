@@ -40,7 +40,7 @@ namespace Fit24
             imgMain.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 TappedCallback = (v, o) => {
-                    Console.WriteLine("Image clicked");
+                    picker.Focus();
                 },
                 NumberOfTapsRequired = 1
             });

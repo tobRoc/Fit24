@@ -47,20 +47,27 @@ namespace Fit24
                     }
                     else
                     {
-                        Button cellEntrie = new Button();
+                        Label cellEntrie = new Label();
                         cellEntrie.Text = cellEntries[j];
-                        cellEntrie.VerticalOptions = LayoutOptions.FillAndExpand;
-                        cellEntrie.HorizontalOptions = LayoutOptions.FillAndExpand;
-                        cellEntrie.Clicked += OnButtonClicked;
+                        cellEntrie.GestureRecognizers.Add(new TapGestureRecognizer
+                        {
+                            TappedCallback = (v, o) => {
+                                Navigation.PushAsync(new CurseLogin("Kursname"));
+                            },
+                            NumberOfTapsRequired = 1
+                        });
+                        PinchGestureRecognizer pgr = new PinchGestureRecognizer();
+                        pgr.PinchUpdated += Pgr_PinchUpdated;
+                        cellEntrie.GestureRecognizers.Add(pgr);
                         gridCursePlan.Children.Add(cellEntrie, j, i);
                     }
                 }
             }
         }
 
-        void OnButtonClicked(object sender, EventArgs e)
+        private void Pgr_PinchUpdated(object sender, PinchGestureUpdatedEventArgs e)
         {
-            Navigation.PushAsync(new CursePlan("Kursname"));
+            //todo: zoom in and out
         }
 
         private static List<string> AddCursePlan(Assembly assembly, string studioCurses)

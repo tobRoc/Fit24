@@ -19,8 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)CursePlanOverview.xaml.cs">
       <DependentUpon>CursePlanOverview.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)CursePlan.xaml.cs">
-      <DependentUpon>CursePlan.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)CurseDetails.xaml.cs">
+      <DependentUpon>CurseDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)UserLogin.xaml.cs">
       <DependentUpon>UserLogin.xaml</DependentUpon>
@@ -28,7 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)CurseLogin.xaml.cs">
       <DependentUpon>CurseLogin.xaml</DependentUpon>
     </Compile>
-	<Compile Include="$(MSBuildThisFileDirectory)Pay.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Pay.xaml.cs">
       <DependentUpon>Pay.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -61,23 +61,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Include="$(MSBuildThisFileDirectory)CursePlanOverview.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CursePlanOverview.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Include="$(MSBuildThisFileDirectory)CursePlan.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CurseDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Include="$(MSBuildThisFileDirectory)UserLogin.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UserLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Include="$(MSBuildThisFileDirectory)CurseLogin.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)CurseLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-	<EmbeddedResource Include="$(MSBuildThisFileDirectory)Pay.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pay.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

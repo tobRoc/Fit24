@@ -9,16 +9,16 @@ using Xamarin.Forms;
 
 namespace Fit24
 {
-	public partial class CursePlan : ContentPage
+	public partial class CurseDetails : ContentPage
     {
         private string location = "";
 
-		public CursePlan(string location)
+		public CurseDetails(string location)
         {
             InitializeComponent();
             this.location = location;
 
-            Grid gridCursePlan = this.FindByName<Grid>("gridCursePlan");
+            Grid gridCursePlan = this.FindByName<Grid>("gridCurseDetails");
             #region fill grid curse plan
             Label cellEntrie = new Label();
             cellEntrie.Text = "Bild Bild\nBild Bild\nBild Bild\nBild Bild";
@@ -35,7 +35,7 @@ namespace Fit24
             cellEntrie2.Text = "*   " + "..." + "\n";
             gridCursePlan.Children.Add(cellEntrie2, 0, 1);
             #endregion
-            Grid gridCursePlanFurtherCurse = this.FindByName<Grid>("gridCursePlanFurtherCurse");
+            Grid gridCursePlanFurtherCurse = this.FindByName<Grid>("gridCurseDetailsFurtherCurse");
             #region fill grid curse plan further curse
             Label cellEntrieFurtherCurse0_0 = new Label();
             cellEntrieFurtherCurse0_0.Text = "Rücken";
@@ -57,7 +57,7 @@ namespace Fit24
             gridCursePlanFurtherCurse.Children.Add(cellEntrieFurtherCurse2_1, 2, 1);
             #endregion
 
-            Button button = this.FindByName<Button>("btnCursePlanBook");
+            Button button = this.FindByName<Button>("btnCurseDetailsBook");
             button.Clicked += OnButtonClicked;
         }
         void OnButtonClicked(object sender, EventArgs e)
